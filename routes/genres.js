@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
-Genre = require('../models/genre.model.js');
+const Genre = require('../models/genre.model.js');
 
 router.get('/api/genres', function(req, res, next) {
     Genre.getGenres(function(err, genres) {
@@ -9,6 +8,7 @@ router.get('/api/genres', function(req, res, next) {
             throw err;
         }
         res.json(genres);
+        res.send("testing this route")
     });
 });
 
@@ -23,7 +23,7 @@ router.post('/api/genres', (req, res) => {
 });
 
 
-app.put('/api/genres/:_id', (req, res) => {
+router.put('/api/genres/:_id', (req, res) => {
 	var id = req.params._id;
 	var genre = req.body;
 	Genre.updateGenre(id, genre, {}, (err, genre) => {
@@ -34,7 +34,7 @@ app.put('/api/genres/:_id', (req, res) => {
 	});
 });
 
-app.delete('/api/genres/:_id', (req, res) => {
+router.delete('/api/genres/:_id', (req, res) => {
 	var id = req.params._id;
 	Genre.removeGenre(id, (err, genre) => {
 		if(err){

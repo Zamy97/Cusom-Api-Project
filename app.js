@@ -6,8 +6,9 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const genresRouter = require('./routes/genres');
-const mainRouter = require('./routes/main')
+const genresRouter = require('./routes/genres.js');
+const bookRouter = require('./routes/book.js');
+const mainRouter = require('./routes/main.js');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', mainRouter);
 app.use('/', genresRouter);
+
 
 
 
