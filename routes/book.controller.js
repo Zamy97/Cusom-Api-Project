@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-Book = require('../models/genre.model.js');
+const Book = require('../models/book.model.js');
 
 router.get('/api/books', (req, res) => {
 	Book.getBooks((err, books) => {
@@ -31,6 +31,7 @@ router.post('/api/books', (req, res) => {
 	});
 });
 
+
 router.put('/api/books/:_id', (req, res) => {
 	var id = req.params._id;
 	var book = req.body;
@@ -51,3 +52,5 @@ router.delete('/api/books/:_id', (req, res) => {
 		res.json(book);
 	});
 });
+
+module.exports = router;
