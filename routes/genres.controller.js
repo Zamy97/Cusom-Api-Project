@@ -8,7 +8,6 @@ router.get('/api/genres', function(req, res, next) {
             throw err;
         }
         res.json(genres);
-        res.send("testing this route")
     });
 });
 

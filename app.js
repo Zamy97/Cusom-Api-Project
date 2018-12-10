@@ -54,3 +54,5 @@ module.exports = app;
 // https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4
 // http://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
 // https://hackernoon.com/restful-api-design-with-node-js-26ccf66eab09
+// https://www.youtube.com/watch?v=eB9Fq9I5ocs&t=250s
+// https://www.youtube.com/watch?v=bqn-sx0v-l0&t=52s
