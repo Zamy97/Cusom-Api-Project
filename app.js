@@ -51,3 +51,6 @@ module.exports = app;
 // https://stackoverflow.com/questions/44510055/failed-to-connect-to-mlab-by-mongo
 // https://www.freecodecamp.org/forum/t/i-need-help-connecting-to-mlab-com-database-and-importing-data/179879
 // http://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
+// https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4
+// http://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api
+// https://hackernoon.com/restful-api-design-with-node-js-26ccf66eab09
