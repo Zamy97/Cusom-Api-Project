@@ -3,6 +3,8 @@ const router = express.Router();
 const errors = require('restify-errors');
 const bcrypt = require('bcryptjs');
 const User = require('../models/User.model.js');
+const auth = require('../auth');
+const jwt = require('jsonwebtoken');
 
 // Register User
 
@@ -28,7 +30,30 @@ router.post('/api/register', (req, res, next) => {
             }
         });
     });
-    console.log(hash);
+});
+
+// Auth User
+
+router.post('/api/auth',async (req, res, next) => {
+    const { email, password } = req.body;
+
+    try {
+        // authenticate user
+        const user = await auth.authenticate(email, password)
+
+        // Create JWt
+        const token = jwt.sign(user.toJSON(), 'secret1', {
+            expiresIn: '15d'
+        });
+
+        const { iat, exp } = jwt.decode(token);
+        // Respond with token
+        res.send({ iat, exp, token });
+
+    } catch(err) {
+        // User unauthorized
+        return next(new errors.UnauthorizedError(err));
+    }
 });
 
 module.exports = router;
