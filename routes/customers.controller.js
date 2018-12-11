@@ -13,6 +13,17 @@ router.get('/api/customers', async (req, res) => {
     }
 });
 
+// GET single customer
+
+router.get('/api/customers/:_id', async (req, res) => {
+    try{
+        const customer = await Customer.findById(req.params._id);
+        res.send(customer);
+    } catch(err) {
+        return err.message
+    }
+})
+
 // Add customer
 router.post('/api/customers', async (req, res) => {
     // check for json
@@ -35,6 +46,19 @@ router.post('/api/customers', async (req, res) => {
         return err.message
     }
 });
+
+// Update customer
+
+router.put('/api/customers/:_id', async (req, res) => {
+    try {
+        const customer = await Customer.findOneAndUpdate( {_id: req.params._id }, req.body);
+        res.send(200);
+    } catch {
+        return err.message
+    }
+})
+
+
 
 
 module.exports = router;
