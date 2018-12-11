@@ -13,10 +13,12 @@ router.get('/api/genres', function(req, res, next) {
 
 router.get('/api/genres/_id', (req, res) => {
     Genre.getGenreById(req.params._id, (err, genre) => {
-        if(err)
-    })
-
-})
+        if(err){
+            throw err:
+        }
+        res.json(genre)
+    });
+});
 
 router.post('/api/genres', (req, res) => {
 	var genre = req.body;
