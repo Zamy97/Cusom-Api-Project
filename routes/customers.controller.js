@@ -58,6 +58,17 @@ router.put('/api/customers/:_id', async (req, res) => {
     }
 })
 
+// Delete Customer
+
+router.delete('/api/customers/:_id', async (req, res) => {
+    try{
+        const customer = await Customer.findOneAndRemove({ _id: req.params._id });
+        res.send(204);
+    } catch {
+        return err.message
+    }
+})
+
 
 
 
