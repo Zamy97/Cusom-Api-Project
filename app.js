@@ -60,3 +60,4 @@ module.exports = app;
 // https://www.youtube.com/watch?v=eB9Fq9I5ocs&t=250s
 // https://www.youtube.com/watch?v=bqn-sx0v-l0&t=52s
 // https://mlab.com/databases/cutom-api-2
+// https://medium.com/@Abazhenov/using-async-await-in-express-with-node-8-b8af872c0016
