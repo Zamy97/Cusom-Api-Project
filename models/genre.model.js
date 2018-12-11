@@ -19,6 +19,11 @@ module.exports.getGenres = (callback, limit) => {
 	Genre.find(callback).limit(limit);
 }
 
+// Get Genre
+module.exports.getGenreById = (id, callback) => {
+	Genre.findById(id, callback)
+}
+
 // Add Genre
 module.exports.addGenre = (genre, callback) => {
 	Genre.create(genre, callback);
