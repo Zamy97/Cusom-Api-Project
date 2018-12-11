@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const genresRouter = require('./routes/genres.controller.js');
 const bookRouter = require('./routes/book.controller.js');
 const mainRouter = require('./routes/main.controller.js');
+const customerRouter = require('./routes/customers.controller.js');
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', mainRouter);
 app.use('/', genresRouter);
 app.use('/', bookRouter);
+app.use('/', customerRouter);
 
 // Connect to mongodb
 mongoose.connect('mongodb://user1:password1@ds129454.mlab.com:29454/cutom-api-2',{ useNewUrlParser: true })
