@@ -13,7 +13,7 @@ const customerSchema = new mongoose.Schema({
         trim: true
     },
     balance: {
-        type: number,
+        type: Number,
         default: 0
     },
     create_date:{
