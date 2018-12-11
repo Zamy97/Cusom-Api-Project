@@ -4,12 +4,12 @@ const timestamp = require('mongoose-timestamp');
 const customerSchema = new mongoose.Schema({
     name: {
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
     balance: {
