@@ -1,5 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+input[type=text] {
+    width: 500px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    /* background-image: url('searchicon.png'); */
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.7s ease-in-out;
+}
+input[type=text]:focus {
+    /* width: 100%; */
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+.front-page{
+    background: url('/public/assets/images/photo-1.jpg');
+    background-size: cover !important;
+    /* padding-bottom: 30%; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.navbar{
+    margin-bottom: 0px;
+}
+#search-label{
+    margin-top: 0px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size-adjust: 5px;
+}
+</style>
+
+
+<div class = "front-page" style="background: url('{{randomImageURL}}');">
+    <div class="jumbtron text-center">
+        <h1 id="search-label">Please use the Api Endpoints.  </h1>
+        <h2 id="search-label">As: api/books or api/genres </h2>
+        <br>
+    </div>
+    <!-- <div class="jumbtron text-center">
+        <form action="/stores" method="GET">
+            <input id="search-term" type="text" name="term" placeholder="Burrito, Taco, Quesadilla etc ">
+            <input id="location" type="text" name="location" placeholder="Powell Bart Station">
+            <button id="submit" type="submit" class="btn btn-primary btn-lg" >Submit</button>
+        </form>
+    </div> -->
+</div>
+
+
+
+
+
 <!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> -->
-
+<!-- <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
 <h1> Please use the Api Endpoints.  </h1>
 <h2> As: api/books or api/genres </h2>
+</center> -->
