@@ -11,7 +11,7 @@ router.get('/api/genres', function(req, res, next) {
     });
 });
 
-router.get('/api/genres/_id', (req, res) => {
+router.get('/api/genres/:_id', (req, res) => {
     Genre.getGenreById(req.params._id, (err, genre) => {
         if(err){
             throw err;
