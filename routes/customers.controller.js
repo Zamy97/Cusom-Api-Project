@@ -7,7 +7,7 @@ const Customer = require('../models/Customer.model.js');
 router.get('/api/customers', async (req, res) => {
     try{
         const customers = await Customer.find({});
-        res.send(customers);
+        res.sendStatus(customers);
     } catch(err) {
         return err.message
     }
@@ -18,7 +18,7 @@ router.get('/api/customers', async (req, res) => {
 router.get('/api/customers/:_id', async (req, res) => {
     try{
         const customer = await Customer.findById(req.params._id);
-        res.send(customer);
+        res.sendStatus(customer);
     } catch(err) {
         return err.message
     }
@@ -41,7 +41,7 @@ router.post('/api/customers', async (req, res) => {
 
     try {
         const newCustomer = await customer.save();
-        res.send(201);
+        res.sendStatus(201);
     } catch(err) {
         return err.message
     }
@@ -52,7 +52,7 @@ router.post('/api/customers', async (req, res) => {
 router.put('/api/customers/:_id', async (req, res) => {
     try {
         const customer = await Customer.findOneAndUpdate( {_id: req.params._id }, req.body);
-        res.send(200);
+        res.sendStatus(200);
     } catch {
         return err.message
     }
@@ -63,7 +63,7 @@ router.put('/api/customers/:_id', async (req, res) => {
 router.delete('/api/customers/:_id', async (req, res) => {
     try{
         const customer = await Customer.findOneAndRemove({ _id: req.params._id });
-        res.send(204);
+        res.sendStatus(204);
     } catch {
         return err.message
     }
