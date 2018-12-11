@@ -22,6 +22,11 @@ npm start
 - PUT (Protected) /customers/:id
 - DELETE (Protected) /customers/:id
 
+- GET /api/genres
+- POST /api/genres
+- PUT /api/genres/:id
+- DELETE /api/genres/:id
+
 #### User Routes
 
 - POST /register
