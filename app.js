@@ -29,6 +29,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Forwards any requests to the /msin URI to our albums Router
 app.use('/', mainRouter);
 app.use('/', genresRouter);
 app.use('/', bookRouter);
@@ -68,3 +69,8 @@ module.exports = app;
 // https://mlab.com/databases/cutom-api-2
 // https://medium.com/@Abazhenov/using-async-await-in-express-with-node-8-b8af872c0016
 // https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client
+// https://github.com/bradtraversy/bookstore/tree/master/client
+// https://github.com/bradtraversy/restify_customer_api
+// https://github.com/auth0/express-jwt
+// https://medium.com/front-end-hacking/learn-using-jwt-with-passport-authentication-9761539c4314
+// https://stackoverflow.com/questions/25260818/rest-with-express-js-nested-router
