@@ -20,6 +20,7 @@ router.get('/api/genres/_id', (req, res) => {
     });
 });
 
+
 router.post('/api/genres', (req, res) => {
 	var genre = req.body;
 	Genre.addGenre(genre, (err, genre) => {
