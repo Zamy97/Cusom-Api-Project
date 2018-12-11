@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-// const rjwt = require('restify-jwt-community');
+const rjwt = require('restify-jwt-community');
 
 const genresRouter = require('./routes/genres.controller.js');
 const bookRouter = require('./routes/book.controller.js');
@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // Protect routes
-// app.use(rjwt({ secret: 'secret1' }).unless({ path: ['/api/auth'] }));
+app.use(rjwt({ secret: 'secret1' }).unless({ path: ['/api/auth'] }));
 
 app.use(logger('dev'));
 app.use(express.json());
