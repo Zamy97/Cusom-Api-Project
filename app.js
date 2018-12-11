@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const rjwt = require('restify-jwt-community');
+// const rjwt = require('restify-jwt-community');
 
 const genresRouter = require('./routes/genres.controller.js');
 const bookRouter = require('./routes/book.controller.js');
@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // Protect routes
-app.use(rjwt({ secret: 'secret1' }).unless({ path: ['/api/auth'] }));
+// app.use(rjwt({ secret: 'secret1' }).unless({ path: ['/api/auth'] }));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -67,3 +67,4 @@ module.exports = app;
 // https://www.youtube.com/watch?v=bqn-sx0v-l0&t=52s
 // https://mlab.com/databases/cutom-api-2
 // https://medium.com/@Abazhenov/using-async-await-in-express-with-node-8-b8af872c0016
+// https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client

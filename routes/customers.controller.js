@@ -7,22 +7,21 @@ const Customer = require('../models/Customer.model.js');
 router.get('/api/customers', async (req, res) => {
     try{
         const customers = await Customer.find({});
-        res.sendStatus(customers);
+        res.send(customers);
     } catch(err) {
         return err.message
     }
 });
 
 // GET single customer
-
 router.get('/api/customers/:_id', async (req, res) => {
     try{
         const customer = await Customer.findById(req.params._id);
-        res.sendStatus(customer);
+        res.send(customer);
     } catch(err) {
         return err.message
     }
-})
+});
 
 // Add customer
 router.post('/api/customers', async (req, res) => {
@@ -56,7 +55,7 @@ router.put('/api/customers/:_id', async (req, res) => {
     } catch {
         return err.message
     }
-})
+});
 
 // Delete Customer
 
@@ -67,9 +66,6 @@ router.delete('/api/customers/:_id', async (req, res) => {
     } catch {
         return err.message
     }
-})
-
-
-
+});
 
 module.exports = router;
