@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // Protect routes
-app.use(rjwt({ secret: 'secret1' }).unless({ path: ['/api/auth', '/', '/api/documentation'] }));
+app.use(rjwt({ secret: 'secret1' }).unless({ path: ['/','/api/auth', '/api/register', '/api/documentation'] }));
 
 app.use(logger('dev'));
 app.use(express.json());
