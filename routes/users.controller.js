@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const errors = require('restify-errors');
 const bcrypt = require('bcryptjs');
-const User = require('../models/User.model.js');
+const User = require('../models/ser.model.js');
 const auth = require('../auth');
 const jwt = require('jsonwebtoken');
 
