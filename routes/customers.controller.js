@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Customer = require('../models/customer.model.js');
+const Customer = require('../models/Customer.model.js');
 
 
 // Get Customers

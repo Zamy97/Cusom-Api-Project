@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const rjwt = require('restify-jwt-community');
 
-// const genresRouter = require('./routes/genres.controller.js');
+const genresRouter = require('./routes/genres.controller.js');
 const bookRouter = require('./routes/book.controller.js');
 const mainRouter = require('./routes/main.controller.js');
 const customerRouter = require('./routes/customers.controller.js');
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Forwards any requests to the /msin URI to our albums Router
 app.use('/', mainRouter);
-// app.use('/', genresRouter);
+app.use('/', genresRouter);
 app.use('/', bookRouter);
 app.use('/', customerRouter);
 app.use('/', userRoute);

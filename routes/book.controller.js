@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Book = require('../models/book.model.js');
+const Book = require('../models/Book.model.js');
 
 router.get('/api/books', (req, res) => {
 	Book.getBooks((err, books) => {
