@@ -80,3 +80,4 @@ module.exports = app;
 // https://github.com/auth0/express-jwt
 // https://medium.com/front-end-hacking/learn-using-jwt-with-passport-authentication-9761539c4314
 // https://stackoverflow.com/questions/25260818/rest-with-express-js-nested-router
+// https://stackoverflow.com/questions/19341975/heroku-node-cannot-find-module-error
