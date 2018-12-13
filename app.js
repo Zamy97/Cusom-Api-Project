@@ -13,6 +13,7 @@ const mainRouter = require('./routes/main.controller.js');
 const customerRouter = require('./routes/customers.controller.js');
 const userRoute = require('./routes/users.controller.js');
 const documentationRouter = require('./routes/documentation.controller.js');
+const signupRouter = require('./routes/signup.controller.js');
 
 
 const app = express();
@@ -22,7 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // Protect routes
-app.use(rjwt({ secret: 'secret1' }).unless({ path: ['/','/api/auth', '/api/register', '/api/documentation'] }));
+app.use(rjwt({ secret: 'secret1' }).unless({ path: ['/','/api/auth', '/api/register', '/api/documentation', '/api/sign-up'] }));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -38,6 +39,8 @@ app.use('/', bookRouter);
 app.use('/', customerRouter);
 app.use('/', userRoute);
 app.use('/', documentationRouter);
+app.use('/', signupRouter);
+
 
 // Connect to mongodb
 mongoose.connect('mongodb://user1:password1@ds129454.mlab.com:29454/cutom-api-2',{ useNewUrlParser: true })
