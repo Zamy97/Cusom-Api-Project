@@ -1,3 +1,4 @@
+<div>
 <ol><ol><ol><ol><ol><ol><ol><ol><ol><ol><ol><ol>
 
 <div>
@@ -6,7 +7,7 @@
 </div>
 
 
- <h6>This document describes the resources that make up the an api that responds with books or genres or authors.</h6>
+ <h6>This document describes the resources that make up the an api that responds with books or genres or customers.</h6>
 
  <h6>If you have any problems or requests, please <a href="auz.zamy@gmail.com">contact us</a>.</h6>
 <br>
@@ -70,7 +71,10 @@
     <h3>Location</h3>
 </div>
 
-<p>The API is available at <code class="highlighter-rouge">https://locahost:3000/api/endpoints</code>. Responses are sent as JSON format.</p>
+<p>The API is available at <code class="highlighter-rouge">https://locahost:3000/api/books</code>. Responses are sent as JSON format.</p>
+<p>The API is available at <code class="highlighter-rouge">https://locahost:3000/api/genres</code>. Responses are sent as JSON format.</p>
+<p>The API is available at <code class="highlighter-rouge">https://locahost:3000/api/customers</code>. Responses are sent as JSON format.</p>
+
 
 
 <div>
@@ -107,8 +111,11 @@
   </tbody>
 </table>
 
-<br>
-<h3 id="error-messages"><a class="anchorjs-link " href="#error-messages" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Error messages</h3>
+<div>
+<ol><ol><ol><ol><ol><ol>
+    <br>
+    <h3>Error messages</h3>
+</div>
 
 <p>If an error occurs, whether on the server or client side, the error message(s) will be returned in an <code class="highlighter-rouge">errors</code> array. For example:</p>
 
@@ -122,19 +129,21 @@
 </div>
 
 
+<div>
+<ol><ol><ol><ol><ol><ol><ol><ol>
+    <h2>Books</h2>
+</div>
 
-<h2 id="current-user"><a class="anchorjs-link " href="#current-user" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Books</h2>
 
-<h3 id="get-the-users-profile"><a class="anchorjs-link " href="#get-the-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Get all the books</h3>
-
+<br>
+<h3>GET all the books</h3>
+<h5><code>something.com/api/books</code></h5>
 
 <p><em>Note</em>: To access all the books you are required to authorized</p>
 
 <p><em>Note</em>: Without a jwt token (i.e. using a Client-ID token) this request will return a <code class="highlighter-rouge">401 Unauthorized</code> response.</p>
 
-<h4 id="parameters"><a class="anchorjs-link " href="#parameters" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Parameters</h4>
 
-<p>None</p>
 
 <h4 id="response"><a class="anchorjs-link " href="#response" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Response</h4>
 
@@ -152,13 +161,19 @@
   <span class="s2">"pages"</span><span class="err">:</span> <span class="kc">500</span><span class="p">,</span>
   <span class="s2">"image_url"</span><span class="err">:</span> <span class="s2">"https://aktarzaman.com/"</span><span class="p">,</span>
   <span class="s2">"buy_url"</span><span class="err">:</span> <span class="s2">"https://aktarzaman.com/"</span><span class="p">,</span>
+
+
+  [MORE books...]
+    [MORE books...]
+      [MORE books...]
+        [MORE books...]
+          [MORE books...]
 </code></pre>
 </div>
 
-<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Get one book using book id:</h3>
+<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>GET one book using book id:</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>something.com/api/books/:_id
-</code></pre>
+<h5><code>something.com/api/books/:_id</code></h5>
 
 
 <h4 id="response-1"><a class="anchorjs-link " href="#response-1" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Response</h4>
@@ -184,9 +199,9 @@
 
 
 
-<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>POST book in the books</h3>
+<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>POST a book in the books:</h3>
 
-<h5> To create a book you'll have to hit this endpoint: something.com/api/books </h5>
+<h5><code>something.com/api/books/:_id</code></h5>
 <h6> Following parameter are required to create a book: </h6>
 
 
@@ -212,7 +227,7 @@
 
 <h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>PUT a book in the books:</h3>
 
-<h5> To create a book you'll have to hit this endpoint: something.com/api/books </h5>
+<h5><code>something.com/api/books/:_id</code></h5>
 <h6> Following parameter are required to replace a book: </h6>
 
 
@@ -236,9 +251,9 @@
 </div>
 
 
-<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Delete a book in the books:</h3>
+<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>DELETE a book in the books:</h3>
 
-<h5> To create a book you'll have to hit this endpoint: something.com/api/books/:_id </h5>
+<h5><code>something.com/api/books/:_id</code></h5>
 <h6> Following parameter are required to delete a book: </h6>
 
 
@@ -260,4 +275,16 @@
   <span class="s2">"image_url"</span><span class="err">:</span> <span class="s2">"required"</span><span class="p">,</span>
   <span class="s2">"buy_url"</span><span class="err">:</span> <span class="s2">"required"</span><span class="p">,</span>
 </code></pre>
+</div>
+</div>
+
+<div>
+    <ol><ol><ol>
+
+        <h4>To call other endpoints such as: <code>something.com/api/customers </code> or  <code>something.com/api/genres </code> follow the same patters as books endpoint! </h4>
+</div>
+
+<div>
+    <ol><ol><ol><ol><ol><ol>
+        <h4> Look at the results first to see how the <code>JSON</code> then provide the right parameter when doing <code>POST, PUT or DELETE </code> </h4>
 </div>
