@@ -1,30 +1,82 @@
-<div class="documentation-block code-light js-anchors">
-    <h2 id="getting-started"><a class="anchorjs-link " href="#getting-started" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Getting started</h2>
+<ol><ol><ol><ol><ol><ol><ol><ol><ol><ol><ol><ol>
 
-<p>This document describes the resources that make up the an api that responds with books or genres or authors.</p>
-
-<p>If you have any problems or requests, please <a href="auz.zamy@gmail.com">contact us</a>.</p>
-
-<h3 id="creating-a-user"><a class="anchorjs-link " href="#creating-a-developer-account" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Create an user account:</h3>
-
-<p>To access most of the endpoints in the api you'll have to varify as an user and get the token to access the routes</p>
-
-<p> To create an user go, <a href="api resister link goes here">here</a> and provide your "email": "your email " and "password": "your password here"</p>
-
-<h3 id="creating-a-user"><a class="anchorjs-link " href="#creating-a-developer-account" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Authenticate the user: </h3>
-
-<p>After creating the user you'll have to authorize the user to access the routes. </p>
-
-<p> To authenticate the user go to, <a href="api auth route link">here</a> and provide your same "email": "your email " and "password": "your password here" as the one that you use to register</p>
+<div>
+  <ol><ol><ol><ol><ol><ol><ol>
+  <h2>Getting Started</h2>
+</div>
 
 
-<h3 id="location"><a class="anchorjs-link " href="#location" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Location</h3>
+ <h6>This document describes the resources that make up the an api that responds with books or genres or authors.</h6>
+
+ <h6>If you have any problems or requests, please <a href="auz.zamy@gmail.com">contact us</a>.</h6>
+<br>
+
+<div>
+<ol><ol><ol><ol><ol><ol>
+    <h3>Create an user account:</h3>
+</div>
+
+<p>[ To access most of the endpoints in the api you'll have to varify as an user and get the token to access the routes ]</p>
+
+<ol>
+  <li>
+<p>Make a <code>POST</code> request to <code class="highlighter-rouge">https://something.com/api/register</code> with the following parameters:</p> </li>
+  <div class="highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your email"</span><span class="p">,</span><span class="w">
+ </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"********"</span><span class="p">,</span><span class="w">
+ </span></span><span class="p">}</span><span class="w">
+</span></code></pre>
+  </div>
+
+<h5> Response: <code>Created</code> </h5>
+
+
+
+<div>
+<ol><ol><ol><ol><ol><ol>
+<h3>Authorize User:</h3>
+</div>
+
+<ol>
+  <li>
+<p>Make a <code>POST</code> request to <code class="highlighter-rouge">https://something.com/api/auth</code> with the following</p>
+<p> [ Has to be same as the one that you used to create an user or it'll return an Unauthorized error: </p>
+ </li>
+  <div class="highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your email"</span><span class="p">,</span><span class="w">
+ </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"********"</span><span class="p">,</span><span class="w">
+ </span></span><span class="p">}</span><span class="w">
+</span></code></pre>
+  </div>
+
+  <li>
+    <p>If the user is found then it'll return the following:</p>
+  </li>
+    <p>The response body will be a JSON representation of your user’s access token:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"091343ce13c8ae780065ecb3b13dc903475dd22cb78a05503c2e0c69c5e98044"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jwt"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1436544465</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+    </div>
+
+    <p>Access tokens do not expires after 15days.</p>
+  </li>
+
+<div>
+<ol><ol><ol><ol><ol><ol>
+    <h3>Location</h3>
+</div>
 
 <p>The API is available at <code class="highlighter-rouge">https://locahost:3000/api/endpoints</code>. Responses are sent as JSON format.</p>
 
 
-
-<h3 id="http-verbs"><a class="anchorjs-link " href="#http-verbs" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>HTTP Verbs</h3>
+<div>
+<ol><ol><ol><ol><ol><ol>
+    <h3>HTTP Verbs</h3>
+</div>
 
 <p>The Az's API uses HTTP verbs appropriate to each action.</p>
 
@@ -69,33 +121,7 @@
 </code></pre>
 </div>
 
-<h4 id="authorization-workflow"><a class="anchorjs-link " href="#authorization-workflow" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Authorization workflow</h4>
 
-<ol>
-  <li>
-<p>Make a POST request to <code class="highlighter-rouge">https://something.com/auth</code> with the following parameters:</p> </li>
-  <div class="highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
- </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your email"</span><span class="p">,</span><span class="w">
- </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"********"</span><span class="p">,</span><span class="w">
- </span></span><span class="p">}</span><span class="w">
-</span></code></pre>
-  </div>
-
-  <li>
-    <p>If the user is found then it'll return the following:</p>
-  </li>
-    <p>The response body will be a JSON representation of your user’s access token:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
-   </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"091343ce13c8ae780065ecb3b13dc903475dd22cb78a05503c2e0c69c5e98044"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jwt"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1436544465</span><span class="w">
- </span><span class="p">}</span><span class="w">
-</span></code></pre>
-    </div>
-
-    <p>Access tokens do not expire.</p>
-  </li>
 
 <h2 id="current-user"><a class="anchorjs-link " href="#current-user" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Books</h2>
 
@@ -184,7 +210,7 @@
 </div>
 
 
-<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>PUT book in the books:</h3>
+<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>PUT a book in the books:</h3>
 
 <h5> To create a book you'll have to hit this endpoint: something.com/api/books </h5>
 <h6> Following parameter are required to replace a book: </h6>
@@ -210,9 +236,7 @@
 </div>
 
 
-
-
-<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Delete book in the books:</h3>
+<h3 id="update-the-current-users-profile"><a class="anchorjs-link " href="#update-the-current-users-profile" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: relative; margin-left: -1em; padding-right: 0.5em;"></a>Delete a book in the books:</h3>
 
 <h5> To create a book you'll have to hit this endpoint: something.com/api/books/:_id </h5>
 <h6> Following parameter are required to delete a book: </h6>
