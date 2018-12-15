@@ -82,3 +82,4 @@ module.exports = app;
 // https://stackoverflow.com/questions/25260818/rest-with-express-js-nested-router
 // https://stackoverflow.com/questions/19341975/heroku-node-cannot-find-module-error
 // https://stackoverflow.com/questions/25260818/rest-with-express-js-nested-router
+// https://freshdesignweb.com/css-registration-form-templates/
