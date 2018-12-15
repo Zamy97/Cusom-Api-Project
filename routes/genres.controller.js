@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Genre = require('../models/genre.model.js');
+const Genre = require('../models/genre.js');
 
 router.get('/api/genres', function(req, res, next) {
     Genre.getGenres(function(err, genres) {
